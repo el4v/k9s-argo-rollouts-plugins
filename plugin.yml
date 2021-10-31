@@ -1,0 +1,56 @@
+plugin:
+  restart-rollout:
+    shortCut: Ctrl-T
+    confirm: true
+    scopes:
+      - rollouts
+    description: Restart rollout
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl argo rollouts -n $NAMESPACE restart $NAME"
+  promote-rollout:
+    shortCut: Ctrl-P
+    confirm: true
+    scopes:
+      - rollouts
+    description: Promote rollout
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl argo rollouts -n $NAMESPACE promote $NAME"
+  full-promote-rollout:
+    shortCut: Ctrl-F
+    confirm: true
+    scopes:
+      - rollouts
+    description: Full promote rollout
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl argo rollouts -n $NAMESPACE promote $NAME --full"
+  retry-rollout:
+    shortCut: Ctrl-R
+    confirm: true
+    scopes:
+      - rollouts
+    description: Retry rollout
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl argo rollouts -n $NAMESPACE retry rollout $NAME"
+  abort-rollout:
+    shortCut: Ctrl-A
+    confirm: true
+    scopes:
+      - rollouts
+    description: Abort rollout
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl argo rollouts -n $NAMESPACE abort $NAME"
