@@ -44,7 +44,7 @@ plugin:
       - -c
       - "kubectl argo rollouts -n $NAMESPACE retry rollout $NAME"
   abort-rollout:
-    shortCut: Ctrl-A
+    shortCut: Ctrl-S
     confirm: true
     scopes:
       - rollouts
